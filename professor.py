@@ -7,7 +7,7 @@ T=3 # maximum number of tries
 
 def main():
     level=get_level()
-    count_correct=0
+    count_correct=0 
     for i in range(N):
         # create problem
         prompt,correct_answer=generate_prompt(level)
