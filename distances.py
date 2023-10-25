@@ -19,7 +19,7 @@ def main():
     d=get_coordinates(N,option)
     # Determine pair of points farthest apart
     max_dist=0
-    for name_1,P1 in d.items(): 
+    for name_1,P1 in d.items():
         for name_2,P2 in d.items():
             dist=compute_distance(P1,P2)
             if dist >= max_dist:
@@ -96,18 +96,25 @@ def get_coordinates(N: int, option: str) -> dict:
     y_coords = []  # Lista para almacenar las coordenadas Y
     for i in range(N):
         if option == "u":
-            name = input("Point Name: ")
-            cord_x , cord_y = get_decimal("",min, max)
-            x_coords.append(cord_x)* coef_lon
-            y_coords.append(cord_y)* coef_lat
+            name = input("Point Name:")
+            lon = "Lon"
+            lat = "Lat"
+            cord_x,cord_y = get_decimal(f"", min, max)
+            x_coords.append(cord_x)
+            y_coords.append(cord_y)
             d[f"{name} {i + 1}"] = (cord_x, cord_y)
+            # Calcula los valores mínimos y máximos de las coordenadas X e Y
+            min_x, max_x = min(x_coords), max(x_coords)
+            min_y, max_y = min(y_coords), max(y_coords)
+            for i in d:
+                print(f"{i} {cord_x}, {cord_y}")
         elif option == "r":
             cord_x = random.uniform(lon_min, lon_max) * coef_lon
             cord_y = random.uniform(lat_min, lat_max) * coef_lat
             x_coords.append(cord_x)
             y_coords.append(cord_y)
             d[f"Point name {i + 1}"] = (cord_x, cord_y)
-            print(f"Point name: {i} {cord_x}, {cord_y}")
+            print(f"{i} {cord_x}, {cord_y}")
         else:
             print("Option should be 'u' or 'r'")
             break
@@ -125,3 +132,4 @@ def compute_distance(P1: tuple, P2: tuple) -> float:
     return dist
 
 main()
+
