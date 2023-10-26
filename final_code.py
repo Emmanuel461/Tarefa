@@ -93,8 +93,34 @@ def get_string(prompt: str,L: list) -> str:
 # output: dictionary of points. The key is the point name and the value is a tuple lon,lat in decimal degrees
 # hint: call get_decimal
 def get_coordinates(N: int, option: str) -> dict:
-    d=dict()
-    ...
+    d = dict()
+    x_coords = []  # Lista para almacenar las coordenadas X
+    y_coords = []  # Lista para almacenar las coordenadas Y
+    for i in range(N):
+        if option == "u":
+            name = input("Point Name:")
+            lon = "Lon"
+            lat = "Lat"
+            cord_x,cord_y = get_decimal(f"", min, max)
+            x_coords.append(cord_x)
+            y_coords.append(cord_y)
+            d[f"{name} {i + 1}"] = (cord_x, cord_y)
+            # Calcula los valores mínimos y máximos de las coordenadas X e Y
+            min_x, max_x = min(x_coords), max(x_coords)
+            min_y, max_y = min(y_coords), max(y_coords)
+            for i in d:
+                print(f"{i} {cord_x}, {cord_y}")
+        elif option == "r":
+            cord_x = random.uniform(lon_min, lon_max) * coef_lon
+            cord_y = random.uniform(lat_min, lat_max) * coef_lat
+            x_coords.append(cord_x)
+            y_coords.append(cord_y)
+            d[f"Point name {i + 1}"] = (cord_x, cord_y)
+            print(f"{i} {cord_x}, {cord_y}")
+        else:
+            print("Option should be 'u' or 'r'")
+            break
+
     return d
 
 # input: tuple (lon,lat for 1st point), tuple (lon,lat for 2nd point)
