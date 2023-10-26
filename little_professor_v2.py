@@ -23,8 +23,15 @@ def main():
 # input: void
 # output: integer (user provided integer between 1 and 3)
 def get_level():
-    ...
-            return(level)
+    while True:
+        try:
+            level = int(input("Level: "))
+            if level not in [1, 2, 3]:
+                pass
+            else:
+                 return level
+        except ValueError:
+            pass
 
 # input: integer (level)
 # output: string (prompt for the user, e.g. '3 + 8 = '), integer (correct answer, e.g. 11)
@@ -35,7 +42,17 @@ def generate_prompt(level):
 # input: integer (level)
 # output: integer (random number between 0 and 9, or between 10 and 99 or between 100 and 999)
 def generate_integer(level):
-    ...
+         if level == 1:
+              x = random.randint(0,9)
+              y = random.randint(0,9)
+         elif level == 2:
+             x = random.randint(10,99)
+             y = random.randint(10,99)
+         elif level == 3:
+             x = random.randint(100,999)
+             y = random.randint(100,999)
+
+         return x, y
 
 # input: string (prompt for user), integer (correct answer), integer (T=maximum number of tries)
 # output: boolean (True is the answer is correct within T tries, and False otherwise) 
