@@ -60,8 +60,14 @@ def get_integer(prompt: str,Min: int, Max: int) -> int:
 # output: string (user's provided value among the values in L)
 # side effect: keeps asking for input until the user provides a valid input
 def get_string(prompt: str,L: list) -> str:
-    ...
-                return x
+     while True:
+        x = input(prompt)
+        L = ["u","r"]
+        if x in L:
+            return x
+        else:
+            print("Value should be u or r")
+                
 
 # inputs: integer (number of points), string (option: user provided "u" or random "r")
 # output: dictionary of points. The key is the point name and the value is a tuple lon,lat in decimal degrees
