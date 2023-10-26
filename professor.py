@@ -12,7 +12,7 @@ def main():
         # create problem
         prompt,correct_answer=generate_prompt(level)
         # prompt for answer: the output can be True (correct answer within T tries) or False (otherwise)
-        correct=get_answer(prompt,correct_answer,T)
+        correct=get_answer(prompt,correct_answer,T) 
         # update number of correct answers or provide the correct answer
         if correct:
             count_correct += 1
