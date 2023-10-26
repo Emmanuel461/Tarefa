@@ -100,6 +100,11 @@ def get_coordinates(N: int, option: str) -> dict:
 # input: tuple (lon,lat for 1st point), tuple (lon,lat for 2nd point)
 # output: float (approximate distance in meters between P1 and P2)
 def compute_distance(P1: tuple, P2: tuple) -> float:
-    ...
+    xmin, ymin = P1
+    xmax, ymax = P2
+    dx = (xmax - xmin)
+    dy = (ymax - ymin)
+    dist = math.sqrt(dx * 2 + dy * 2)
+    return dist
 
 main()
