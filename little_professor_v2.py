@@ -36,7 +36,12 @@ def get_level():
 # input: integer (level)
 # output: string (prompt for the user, e.g. '3 + 8 = '), integer (correct answer, e.g. 11)
 def generate_prompt(level):
-    ...
+    x, y  = generate_integer(level)
+    operator = '+'
+
+    prompt = f"{x} {operator} {y} = "
+    correct_answer = x + y
+
     return prompt, correct_answer
 
 # input: integer (level)
@@ -59,7 +64,13 @@ def generate_integer(level):
 def get_answer(prompt,n,T):
     tries=0
     while tries<T:
-        ...
+        user_answer = get_integer(prompt, 0, 999)
+        if user_answer == correct_answer:
+            return True
+        else:
+            print("EEE")
+        tries += 1
+    return False
 
 # input: string (prompt to user), integer (minimum value for input), integer (maximum value for input)
 # output: integer (user's provided integer between minimum and maximum)
