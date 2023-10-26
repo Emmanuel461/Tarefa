@@ -46,15 +46,35 @@ def plot_scatter(points: dict):
 # output: float (user's provided value between minimum and maximum)
 # side effect: keeps asking for input until the user provides a valid input
 def get_decimal(prompt: str,Min: float, Max: float) -> float:
-    ...
-                return x
+    while True:
+        try:
+            lon = "Lon"
+            cord_x = float(input(f"{prompt} {lon} between {lon_min} and {lon_max}: "))
+            if lon_min <= cord_x <= lon_max:
+                lat = "Lat"
+                cord_y = float(input(f"{prompt} {lat} between {lat_min} and {lat_max}: "))
+                if lat_min <= cord_y <= lat_max:
+                    return (cord_x, cord_y)
+                else:
+                    print(f"Insert valid {lat} value between {lat_min} and {lat_max}.")
+            else:
+                print(f"Insert valid {lon} value between {lon_min} and {lon_max}.")
+        except ValueError:
+            print("Insert valid X and Y values.")
 
 # input: string (prompt to user), integer (minimum value for input), integer (maximum value for input)
 # output: integer (user's provided value between minimum and maximum)
 # side effect: keeps asking for input until the user provides a valid input
 def get_integer(prompt: str,Min: int, Max: int) -> int:
-    ...
+     while True:
+        try:
+            x = int(input(prompt))
+            if Min <= x <= Max:
                 return x
+            else:
+                 print("Insert a value between 2 and 10")
+        except ValueError:
+            pass
 
 # input: string (prompt to user), list (list of strings that are acceptable values)
 # output: string (user's provided value among the values in L)
