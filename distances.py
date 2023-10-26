@@ -3,7 +3,7 @@
 import random
 import math
 import matplotlib.pyplot as plt
-
+ 
 # Constants for the region of interest (ROI)
 lat_min= 38.7 # minimum latitude in decimal degrees
 lat_max= 38.78 # maximum latitude in decimal degrees
