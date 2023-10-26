@@ -63,9 +63,16 @@ def get_answer(prompt,n,T):
 
 # input: string (prompt to user), integer (minimum value for input), integer (maximum value for input)
 # output: integer (user's provided integer between minimum and maximum)
-def get_integer(prompt,Min, Max):
-    ...
+def get_integer(prompt,min, max):
+    while True:
+        try:
+            x = int(input(prompt))
+            if min <= x <= max:
                 return x
+            else:
+                pass
+        except ValueError:
+            break
 
 
 # main
