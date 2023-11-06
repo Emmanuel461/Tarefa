@@ -1,8 +1,6 @@
 from myhaversine import myhaversine
 from haversine import haversine
 
-
-
 def test_haversine():
     lyon = (45.7597, 4.8422)
     paris = (48.8567, 2.3508)
@@ -18,3 +16,12 @@ def test_haversine():
     calc_SNP_2 = haversine(santiago, north_pole)
     diff_S_NP = abs(calc_SNP_1 - calc_SNP_2)
     assert diff_S_NP <= 0.01, "La diferencia entre el cálculo de Santiago y el Polo Norte es mayor que 0.01 (10m)"
+
+from myfunctions import mysqrt
+import math 
+
+def test_mysqrt():
+    a = mysqrt(16) 
+    b = math.sqrt(16)
+    diff_sqrt = abs(a-b)
+    assert diff_sqrt <= 0.001
