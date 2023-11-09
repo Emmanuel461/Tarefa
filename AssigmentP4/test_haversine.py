@@ -25,3 +25,15 @@ def test_mysqrt():
     b = math.sqrt(16)
     diff_sqrt = abs(a-b)
     assert diff_sqrt <= 0.001
+
+from myhaversine import mysin
+
+def test_mysin():
+    a = mysin(45)
+    b = math.sin(45)
+    diff_sin_1 = abs(a-b)
+    a1 = mysin(180)
+    b1 = math.sin(180)
+    diff_sin_2 = abs(a-b)
+    assert diff_sin_1 <= 1.5
+    assert diff_sin_2 <= 1.5
