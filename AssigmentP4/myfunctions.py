@@ -45,7 +45,7 @@ def mycos(x):
 # McLaurin approximation for cosine
 # Input: angle in degrees (supposed to be between 0 and 45)
 def cos45(x):
-    n=6 # Number of terms in the approximation
+    n=9 # Number of terms in the approximation
     if x<0 or x>45:
         return 'not reliable'
     x=deg2rad(x)
@@ -59,7 +59,7 @@ def cos45(x):
 # McLaurin approximation for sine
 # Input: angle in degrees (supposed to be between 0 and 45)
 def sin45(x):
-    n=6 # Number of terms in the approximation
+    n=9 # Number of terms in the approximation
     if x<0 or x>45:
         return 'not reliable'
     x=deg2rad(x)
