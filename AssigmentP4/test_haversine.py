@@ -34,6 +34,6 @@ def test_mysin():
     diff_sin_1 = abs(a-b)
     a1 = mysin(180)
     b1 = math.sin(180)
-    diff_sin_2 = abs(a-b)
+    diff_sin_2 = abs(a1-b1)
     assert diff_sin_1 <= 1.5
     assert diff_sin_2 <= 1.5
