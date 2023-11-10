@@ -17,11 +17,11 @@ def test_haversine():
     diff_S_NP = abs(calc_SNP_1 - calc_SNP_2)
     assert diff_S_NP <= 0.02, "La diferencia entre el cálculo de Santiago y el Polo Norte es mayor que 0.01 (10m)"
 
-from myfunctions import mysqrt
+from myfunctions import mysqrt # Cambios
 import math 
 
 def test_mysqrt():
-    a = mysqrt(16) 
+    a = mysqrt(16)  
     b = math.sqrt(16)
     diff_sqrt = abs(a-b)
     assert diff_sqrt <= 0.001
